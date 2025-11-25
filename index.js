@@ -19,17 +19,12 @@ console.log(` Enviando prompt: "${promptUsuario}"`);
 const chatCompletion = await openai.chat.completions.create({ 
 // El formato 'messages' es el estándar de OpenAI 
 messages: [ 
-//{ role: 'system', content: 'Eres un asistente útil y creativo.' },
-//{ role: 'system', content: 'Eres un capitán pirata rudo y hablas como tal. Siempre te quejas del clima.' }, 
-//{ role: 'system', content: 'Eres un poeta melancólico. Respondes a todo con un breve poema de 4 líneas.' }, 
-{ role: 'system', content: 'Eres un analista de negocios experto. Tu trabajo es resumir texto en 3 bullet points clave.' }, 
-//{ role: 'user', 
-//content: promptUsuario } ], 
-{ role: 'user', content: `Genera un resumen de 3 bullet points del siguiente reporte: \n\n {promptUsuario}` }], // ¡Observa cómo se inyecta la variable!], 
+{ role: 'system', 
+content: 'Eres un asistente útil y creativo.' }, 
+{ role: 'user', 
+content: promptUsuario } ], 
 model: 'mistral-7b-instruct', // El modelo cargado en LM Studio 
-//temperature: 0.7, // Controla la creatividad 
-//temperature: 0.1,
-temperature: 1.2,
+temperature: 0.7, // Controla la creatividad 
 }); 
 // 4. Extraemos y mostramos la respuesta 
 const respuesta = chatCompletion.choices[0].message.content; 
