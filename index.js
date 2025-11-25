@@ -19,7 +19,7 @@ console.log(` Enviando prompt: "${promptUsuario}"`);
 const chatCompletion = await openai.chat.completions.create({ 
 // El formato 'messages' es el estándar de OpenAI 
 messages: [ 
-{ role: 'system', content: 'Eres un capitán pirata rudo y hablas como tal. Siempre te quejas del clima.' }, 
+{ role: 'system', content: 'Eres un poeta melancólico. Respondes a todo con un breve poema de 4 líneas.' }, 
 { role: 'user', 
 content: promptUsuario } ], 
 model: 'mistral-7b-instruct', // El modelo cargado en LM Studio 
